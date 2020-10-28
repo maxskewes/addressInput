@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }  
+  
+  </style>
+  
+  <script>
+    const validateUserName = () => {
+      var value = document.getElementById("userName").value;
+      var message = document.getElementById("userNameMessage");
+
+      message.innerText = "";
+      for(var i = 0; i < value.length; i++) {
+        var character = value.charAt(i);
+
+        if((character >= "a" && character <= "z")
+          || (character >= "A" && character <= "Z")
+          || (character === " "))  {
+
+        } else {
+          message.innerText = "Character '" + character + "' is invalid in Name.";
+        }
+      }
+    }
+
+    const validateStreetAddress = () => {
+      var value = document.getElementById("streetAddress").value;
+      var message = document.getElementById("streetAddressMessage");
+
+      message.innerText = "";
+      for(var i = 0; i < value.length; i++) {
+        var character = value.charAt(i);
+
+        if((character >= "a" && character <= "z")
+          || (character >= "A" && character <= "Z")
+          || (character >= 0 && character <= 9)
+          || (character === " "))  {
+
+        } else {
+          message.innerText = "Character '" + character + "' is invalid in Street Address.";
+        }
+      }
+    }
+
+    const validateCity = () => {
+      var value = document.getElementById("city").value;
+      var message = document.getElementById("cityMessage");
+
+      message.innerText = "";
+      for(var i = 0; i < value.length; i++) {
+        var character = value.charAt(i);
+
+        if((character >= "a" && character <= "z")
+          || (character >= "A" && character <= "Z")
+          || (character === " "))  {
+
+        } else {
+          message.innerText = "Character '" + character + "' is invalid in City.";
+        }
+      }
+    }
+
+    const validateZipCode = () => {
+      var value = document.getElementById("zipCode").value;
+      var message = document.getElementById("zipCodeMessage");
+
+      message.innerText = "";
+      for(var i = 0; i < value.length; i++) {
+        var character = value.charAt(i);
+
+        if((character >= 0 && character <= 9))  {
+
+        } else {
+          message.innerText = "Character '" + character + "' is invalid in Zip Code.";
+        }
+      }
+    }
+  </script>
+</head>
+<h1>Input Name and Address</h1>
+<body>
+  <input type="text" id="userName" placeholder="First and Last Name" oninput="validateUserName();">
+  <span id="userNameMessage" style="color: blue;"></span>
+  <br>
+  <input type="text" id="streetAddress" placeholder="Street Address" oninput="validateStreetAddress();">
+  <span id="streetAddressMessage" style="color: blue;"></span>
+  <br>
+  <input type="text" id="city" placeholder="City" oninput="validateCity();">
+  <span id="cityMessage" style="color: blue;"></span>
+  <select id="state">
+    <option value="AL">Alabama</option>
+    <option value="AK">Alaska</option>
+    <option value="AZ">Arizona</option>
+    <option value="AR">Arkansas</option>
+    <option value="CA">California</option>
+    <option value="CO">Colorado</option>
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="DC">District Of Columbia</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="HI">Hawaii</option>
+    <option value="ID">Idaho</option>
+    <option value="IL">Illinois</option>
+    <option value="IN">Indiana</option>
+    <option value="IA">Iowa</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisiana</option>
+    <option value="ME">Maine</option>
+    <option value="MD">Maryland</option>
+    <option value="MA">Massachusetts</option>
+    <option value="MI">Michigan</option>
+    <option value="MN">Minnesota</option>
+    <option value="MS">Mississippi</option>
+    <option value="MO">Missouri</option>
+    <option value="MT">Montana</option>
+    <option value="NE">Nebraska</option>
+    <option value="NV">Nevada</option>
+    <option value="NH">New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NM">New Mexico</option>
+    <option value="NY">New York</option>
+    <option value="NC">North Carolina</option>
+    <option value="ND">North Dakota</option>
+    <option value="OH">Ohio</option>
+    <option value="OK">Oklahoma</option>
+    <option value="OR">Oregon</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Carolina</option>
+    <option value="SD">South Dakota</option>
+    <option value="TN">Tennessee</option>
+    <option value="TX">Texas</option>
+    <option value="UT">Utah</option>
+    <option value="VT">Vermont</option>
+    <option value="VA">Virginia</option>
+    <option value="WA">Washington</option>
+    <option value="WV">West Virginia</option>
+    <option value="WI">Wisconsin</option>
+    <option value="WY">Wyoming</option>
+  </select>
+  <br>
+  <input type="text" id="zipCode" placeholder="Zip Code" oninput="validateZipCode();">
+  <span id="zipCodeMessage" style="color: blue;"></span>
+</body>
+</html>
