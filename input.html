@@ -13,91 +13,18 @@
     border-radius: 4px;
     box-sizing: border-box;
   }  
-  
   </style>
-  
-  <script>
-    const validateUserName = () => {
-      var value = document.getElementById("userName").value;
-      var message = document.getElementById("userNameMessage");
-
-      message.innerText = "";
-      for(var i = 0; i < value.length; i++) {
-        var character = value.charAt(i);
-
-        if((character >= "a" && character <= "z")
-          || (character >= "A" && character <= "Z")
-          || (character === " "))  {
-
-        } else {
-          message.innerText = "Character '" + character + "' is invalid in Name.";
-        }
-      }
-    }
-
-    const validateStreetAddress = () => {
-      var value = document.getElementById("streetAddress").value;
-      var message = document.getElementById("streetAddressMessage");
-
-      message.innerText = "";
-      for(var i = 0; i < value.length; i++) {
-        var character = value.charAt(i);
-
-        if((character >= "a" && character <= "z")
-          || (character >= "A" && character <= "Z")
-          || (character >= 0 && character <= 9)
-          || (character === " "))  {
-
-        } else {
-          message.innerText = "Character '" + character + "' is invalid in Street Address.";
-        }
-      }
-    }
-
-    const validateCity = () => {
-      var value = document.getElementById("city").value;
-      var message = document.getElementById("cityMessage");
-
-      message.innerText = "";
-      for(var i = 0; i < value.length; i++) {
-        var character = value.charAt(i);
-
-        if((character >= "a" && character <= "z")
-          || (character >= "A" && character <= "Z")
-          || (character === " "))  {
-
-        } else {
-          message.innerText = "Character '" + character + "' is invalid in City.";
-        }
-      }
-    }
-
-    const validateZipCode = () => {
-      var value = document.getElementById("zipCode").value;
-      var message = document.getElementById("zipCodeMessage");
-
-      message.innerText = "";
-      for(var i = 0; i < value.length; i++) {
-        var character = value.charAt(i);
-
-        if((character >= 0 && character <= 9))  {
-
-        } else {
-          message.innerText = "Character '" + character + "' is invalid in Zip Code.";
-        }
-      }
-    }
-  </script>
+  <script src="input.js"></script>
 </head>
 <h1>Input Name and Address</h1>
 <body>
-  <input type="text" id="userName" placeholder="First and Last Name" oninput="validateUserName();">
+  <input type="text" id="userName" placeholder="First and Last Name">
   <span id="userNameMessage" style="color: blue;"></span>
   <br>
-  <input type="text" id="streetAddress" placeholder="Street Address" oninput="validateStreetAddress();">
+  <input type="text" id="streetAddress" placeholder="Street Address">
   <span id="streetAddressMessage" style="color: blue;"></span>
   <br>
-  <input type="text" id="city" placeholder="City" oninput="validateCity();">
+  <input type="text" id="city" placeholder="City">
   <span id="cityMessage" style="color: blue;"></span>
   <select id="state">
     <option value="AL">Alabama</option>
@@ -153,7 +80,10 @@
     <option value="WY">Wyoming</option>
   </select>
   <br>
-  <input type="text" id="zipCode" placeholder="Zip Code" oninput="validateZipCode();">
+  <input type="text" id="zipCode" placeholder="Zip Code">
   <span id="zipCodeMessage" style="color: blue;"></span>
+  <br>
+  <input type="password" id="createPassword" placeholder="Create Password">
+  <span id="createPasswordMessage" style="color: blue;"></span>
 </body>
 </html>
